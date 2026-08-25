@@ -1,7 +1,6 @@
-<?php include "./includes/header.html"; ?>
-
-
-
+<?php include "./includes/header.html";
+      include "./db.php";
+?>
 <div class="container col-9  mt-5">
     <div class="w-100 d-flex  justify-content-between align-items-center">
         <h3 class="text-primary">Product Dashbaord</h3>
