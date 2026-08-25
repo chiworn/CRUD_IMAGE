@@ -1,4 +1,5 @@
 <?php 
+    include "./db.php";
    
     // logic insert data to table 
 
@@ -20,6 +21,16 @@
 
     echo $name , $price ,  $qty , $dis , $imagename , $tmp;
 
+    $newname = time().$imagename;
+    $uploade = "./uploads/".$newname;
+
+    move_uploaded_file($tmp,$uploade);
+
+    $con->query("INSERT INTO `tbl_products`( `namepro`, `price`, `qty`, `dis`, `image`) VALUES ('$name','$price','$qty','$dis','$newname')");
+
+    
+    header("./index.php");
+    
     }
 
 
