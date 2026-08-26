@@ -29,7 +29,8 @@
     $con->query("INSERT INTO `tbl_products`( `namepro`, `price`, `qty`, `dis`, `image`) VALUES ('$name','$price','$qty','$dis','$newname')");
 
     
-    header("./index.php");
+    header("location: index.php");
+    exit;
     
     }
 

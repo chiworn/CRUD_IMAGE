@@ -18,32 +18,27 @@
                 <th>ACTION</th>
             </thead>
             <tbody>
+
+            <?php 
+
+             $result =  $con->query("SELECT `id`, `namepro`, `price`, `qty`, `dis`, `image`, `created_at` FROM `tbl_products` WHERE 1");
+             while($row = mysqli_fetch_assoc($result)){
+            
+            ?>
                 <tr>
-                <td>1001</td>
-                <td>COCA_COLA</td>
-                <td>12.00$</td>
-                <td>100</td>
-                <td>Lorem, ipsum.</td>
-                <td> <img class="imagepro" src="https://i.pinimg.com/736x/ee/e6/da/eee6dac4bef1091e6dbc75a281ed697e.jpg" alt=""> </td>
+                <td><?= $row['id'] ?></td>
+                <td><?= $row['namepro']  ?></td>
+                <td><?= $row['price'] ?></td>
+                <td><?= $row['qty'] ?></td>
+                <td><?= $row['dis'] ?></td>
+                <td> <img class="imagepro" src="./uploads/<?= $row['image'] ?>" alt=""> </td>
                 <td>
                     <button class="btn btn-warning">EDIT </button>
                     <button class="btn btn-danger">DELETE</button>
                      </td>
 
                 </tr>
-                 <tr>
-                <td>1001</td>
-                <td>COCA_COLA</td>
-                <td>12.00$</td>
-                <td>100</td>
-                <td>Lorem, ipsum.</td>
-                <td> <img class="imagepro" src="https://i.pinimg.com/736x/ee/e6/da/eee6dac4bef1091e6dbc75a281ed697e.jpg" alt=""> </td>
-                <td>
-                    <button class="btn btn-warning">EDIT </button>
-                    <button class="btn btn-danger">DELETE</button>
-                     </td>
-
-                </tr>
+                <?php }?>
               
             </tbody>
         </table>
