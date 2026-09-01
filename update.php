@@ -30,10 +30,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $con->query("UPDATE `tbl_products` SET `namepro`='$name',`price`='$price',`qty`='$qty',`dis`='$dis',`image`='$newname' WHERE `id` =  $id");
 
  
+    }else{
+           $con->query("UPDATE `tbl_products` SET `namepro`='$name',`price`='$price',`qty`='$qty',`dis`='$dis',`image`='$oldimage' WHERE `id` =  $id");
+
     }
    
-    $con->query("UPDATE `tbl_products` SET `namepro`='$name',`price`='$price',`qty`='$qty',`dis`='$dis',`image`='$oldimage' WHERE `id` =  $id");
-
+ 
     header("location: index.php");
     exit;
     

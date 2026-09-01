@@ -34,7 +34,7 @@
                 <td> <img class="imagepro" src="./uploads/<?= $row['image'] ?>" alt=""> </td>
                 <td>
                     <a href="./form_update.php?id=<?= $row['id'] ?>" class="btn btn-warning">EDIT </a>
-                    <button class="btn btn-danger">DELETE</button>
+                    <a href="./delete.php?id=<?= $row['id'] ?>" class="btn btn-danger">DELETE</a>
                      </td>
 
                 </tr>
